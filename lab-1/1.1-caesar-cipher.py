@@ -1,5 +1,6 @@
 def caesar(s, k, decrypt=False):
-	if decrypt: k = 26 - k
+	if decrypt: 
+		k = 26 - k
 	r = ""
 	for i in s:
 		if(ord(i) >= 65 and ord(i) <= 90):
