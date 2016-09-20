@@ -1,3 +1,7 @@
+# Date created: 2016-09-20
+# Authour: Alex Kiernan
+# Contents: Encrypt plaintext with Vignere cipher 
+
 from itertools import starmap, cycle
  
 def encrypt(message, key):
@@ -18,7 +22,7 @@ def decrypt(message, key):
  
     return "".join(starmap(dec, zip(message, cycle(key))))
 
-text = "I shall (from now on) select and take the ingots individually in my own yard, and I shall exercise against you my right of rejection because you have treated me with contempt."
+text = open("msg1.txt", 'r').read()
 key = "PASSWORD"
 
 encrypted_msg = encrypt(text, key)
