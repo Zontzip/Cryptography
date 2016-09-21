@@ -1,6 +1,10 @@
+* Date Created: 2016-09-20
+* Author: Alex Kiernan
+
 YHWVTROIYUDQPSEBJATWPTFOXGFZWJZQLBGI
 THURSDAYJULYTEN
-
+        * 
+        ** Either June or July
 
 A  B  C  D  E  F  G  H  I  J   K  L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
 0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25
@@ -37,7 +41,7 @@ J = A
 
 *************
 D   3
-N -13 = -10 mod 26 = 16 = Q
+N -13 = -10 mod 26 = 16 = Q - therefore cant be June as 'password' is more likely than 'paq...''
 ***********
 
 D   3
@@ -45,6 +49,10 @@ L -11 = -8 mod 26 = 18 = S
 
 Q  16
 Y -24 = -8 mod 26 = 18 = S
+
+Options for start of sentence (that aren't 'the') are: 
+ten - using ten results in wor whereas two will not
+two
 
 P  15
 T -19 = -4 mod 26 = 22 = W
@@ -55,6 +63,4 @@ E - 4 = 14 = O
 E   4
 N -13 = 17 = R
 
-
-ten
-two
+Appyling PASSWOR assumes PASSWORD is the key which gives correct result
