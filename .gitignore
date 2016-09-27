@@ -110,5 +110,5 @@ local.properties
 # Sublime
 #################
 
-.sublime-workspace
-.sublime-project
+*.sublime-workspace
+*.sublime-project
