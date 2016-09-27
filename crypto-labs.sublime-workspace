@@ -17,11 +17,11 @@
 			],
 			[
 				"scr",
-				"script	Tag"
+				"script\tTag"
 			],
 			[
 				"sc",
-				"script	Tag"
+				"script\tTag"
 			],
 			[
 				"handl",
@@ -81,6 +81,7 @@
 			"settings":
 			{
 				"buffer_size": 637,
+				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "Yhwvtroi, 28 Yudq 2016 ­ Pse bjatw pt foxgf zwjzql"
 			}
