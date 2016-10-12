@@ -13,8 +13,19 @@ def pad(plaintext):
 def unpad(padded_plaintext):
 	return Padding.removePadding(padded_plaintext,mode='CMS')
 
+print("Plaintext: " + plaintext)
+
 padded_plaintext = pad(plaintext)
-print(padded_plaintext)
+print("Padded plaintext: " + padded_plaintext)
+
+des = DES.new(key, DES.MODE_ECB)
+encrypted_msg = des.encrypt(padded_plaintext)
+encrypted_msg = encrypted_msg.encode('hex')
+print("Encrypted message: " + encrypted_msg)
+
+encrypted_msg = encrypted_msg.decode('hex')
+decrypted_msg = des.decrypt(encrypted_msg)
+print("Decrypted message: " + decrypted_msg)
 
 unpadded_plaintext = unpad(padded_plaintext)
-print(unpadded_plaintext)
+print("Unpadded message: " + unpadded_plaintext)
