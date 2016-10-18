@@ -41,5 +41,7 @@ if __name__ == "__main__":
     from datetime import datetime
     now = datetime.now()
     initialize_generator(now.microsecond)
-    for i in xrange(100):
-        print extract_number()
+    f = open("data.txt", "w")
+    for i in xrange(1000):
+        f.write(str(extract_number()))
+    f.close
