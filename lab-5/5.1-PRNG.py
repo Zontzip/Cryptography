@@ -1,10 +1,7 @@
 MT = [0 for i in xrange(624)]
 index = 0
-
 bitmask_1 = (2 ** 32) - 1
-
 bitmask_2 = 2 ** 31
-
 bitmask_3 = (2 ** 31) - 1
 
 def initialize_generator(seed):
@@ -42,4 +39,5 @@ if __name__ == "__main__":
     now = datetime.now()
     initialize_generator(now.microsecond)
     for i in xrange(100):
-        print extract_number()
+        string = extract_number()
+        print bin(extract_number())
