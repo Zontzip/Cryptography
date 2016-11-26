@@ -38,13 +38,10 @@ if __name__ == "__main__":
     from datetime import datetime
     now = datetime.now()
     initialize_generator(now.microsecond)
-<<<<<<< HEAD
     for i in xrange(100):
         string = extract_number()
         print bin(extract_number())
-=======
     f = open("data.txt", "w")
-    for i in xrange(1000):
-        f.write(str(extract_number()))
+    for i in xrange(100):
+        f.write(str(bin(extract_number())) + "\n")
     f.close
->>>>>>> 8f20813dded980913aab572b6b080683031879ba

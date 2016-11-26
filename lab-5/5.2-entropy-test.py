@@ -2,18 +2,6 @@ import math
 import scipy.special as spc
 
 def monobit(bin_data):
-    """
-    Note that this description is taken from the NIST documentation [1]
-    [1] http://csrc.nist.gov/publications/nistpubs/800-22-rev1a/SP800-22rev1a.pdf
-
-    The focus of this test is the proportion of zeros and ones for the entire sequence. The purpose of this test is
-    to determine whether the number of ones and zeros in a sequence are approximately the same as would be expected
-    for a truly random sequence. This test assesses the closeness of the fraction of ones to 1/2, that is the number
-    of ones and zeros ina  sequence should be about the same. All subsequent tests depend on this test.
-
-    :param bin_data: a binary string
-    :return: the p-value from the test
-    """
     count = 0
     # If the char is 0 minus 1, else add 1
     for char in bin_data:
@@ -26,6 +14,9 @@ def monobit(bin_data):
     p_val = spc.erfc(math.fabs(sobs) / math.sqrt(2))
     return p_val
 
-example_binary_string = "10001001110001110110001011001010"
-p_value = monobit(example_binary_string)
-print p_value
+with open("data.txt") as f:
+    content = f.readlines()
+
+for binary_string in content:
+    p_value = monobit(binary_string)
+    print p_value
