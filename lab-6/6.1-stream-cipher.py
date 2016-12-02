@@ -30,18 +30,19 @@ def RC4(key):
 def convert_key(s):
     return [ord(c) for c in s]
 
-print("Stream Cipher Encrpyter")
+if __name__ == "__main__":
+    print("Stream Cipher Encrpyter")
 
-key = "Secret"
-plaintext = "Attack at dawn"
+    key = "Secret"
+    plaintext = "Attack at dawn"
 
-print("\nKey: " + key)
-print("Plaintext: " + plaintext)
+    print("\nKey: " + key)
+    print("Plaintext: " + plaintext)
 
-key = convert_key(key)
-keystream = RC4(key)
+    key = convert_key(key)
+    keystream = RC4(key)
 
-print("\nCiphertext: ")
-for char in plaintext:
-    sys.stdout.write("%02X" % (ord(char) ^ keystream.next()))
-print
+    print("\nCiphertext: ")
+    for char in plaintext:
+        sys.stdout.write("%02X" % (ord(char) ^ keystream.next()))
+    print
