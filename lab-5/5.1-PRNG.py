@@ -36,12 +36,20 @@ def generate_numbers():
 
 if __name__ == "__main__":
     from datetime import datetime
+
+    print("Pseduo Random Number Generator")
+
+    print("\nGenerating random numbers...")
     now = datetime.now()
     initialize_generator(now.microsecond)
-    for i in xrange(100):
-        string = extract_number()
-        print bin(extract_number())
-    f = open("data.txt", "w")
-    for i in xrange(100):
-        f.write(str(bin(extract_number())) + "\n")
-    f.close
+    print("Random numbers generated!")
+
+    print("\nWriting data to file...")
+    try:
+        f = open("data.txt", "w")
+        for i in xrange(100):
+            f.write(str(bin(extract_number())) + "\n")
+        f.close
+        print("Data written to file!")
+    except:
+        print("Error writing to file")

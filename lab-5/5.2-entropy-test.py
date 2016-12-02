@@ -14,9 +14,19 @@ def monobit(bin_data):
     p_val = spc.erfc(math.fabs(sobs) / math.sqrt(2))
     return p_val
 
-with open("data.txt") as f:
-    content = f.readlines()
+if __name__ == "__main__":
+    print("Entropy Test Using NIST Test 01 - Frequency of Bits")
 
-for binary_string in content:
-    p_value = monobit(binary_string)
-    print p_value
+    try:
+        print("\nOpening data file...")
+        with open("data.txt") as f:
+            content = f.readlines()
+        print("Data file opened!")
+    except:
+        print("Error opening data file")
+
+    # p-value threshold is 0.005
+    for binary_string in content:
+        p_value = monobit(binary_string)
+        print ("\nBinary string: " + binary_string + "p-value:  "
+        + str(p_value))
