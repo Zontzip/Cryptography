@@ -1,3 +1,5 @@
+import sys
+
 def KSA(key):
     keylength = len(key)
 
@@ -6,10 +8,9 @@ def KSA(key):
     j = 0
     for i in range(256):
         j = (j + S[i] + key[i % keylength]) % 256
-        S[i], S[j] = S[j], S[i]  # swap
+        S[i], S[j] = S[j], S[i]
 
     return S
-
 
 def PRGA(S):
     i = 0
@@ -22,23 +23,25 @@ def PRGA(S):
         K = S[(S[i] + S[j]) % 256]
         yield K
 
-
 def RC4(key):
     S = KSA(key)
     return PRGA(S)
 
+def convert_key(s):
+    return [ord(c) for c in s]
 
-if __name__ == '__main__':
-    key = 'Secret'
-    plaintext = 'Attack at dawn'
+print("Stream Cipher Encrpyter")
 
-    def convert_key(s):
-        return [ord(c) for c in s]
-    key = convert_key(key)
+key = "Secret"
+plaintext = "Attack at dawn"
 
-    keystream = RC4(key)
+print("\nKey: " + key)
+print("Plaintext: " + plaintext)
 
-    import sys
-    for c in plaintext:
-        sys.stdout.write("%02X" % (ord(c) ^ keystream.next()))
-    print
+key = convert_key(key)
+keystream = RC4(key)
+
+print("\nCiphertext: ")
+for char in plaintext:
+    sys.stdout.write("%02X" % (ord(char) ^ keystream.next()))
+print
