@@ -2,19 +2,17 @@ import os, sys
 from PIL import Image
 
 filename = "grayscale.bmp"
-height = 300
 width = 400
+height = 300
 
 img = Image.open(filename)
 im = img.load()
 
-i = 0
-while i  <height:
-    j = 0
-    while j < width:
-        j = j + 1
-    i = i + 1
-newfile = filename.partition('.')
-newfile = newfile[0] + "-copy.bmp"
+newImg = Image.new("RGB", (width, height))
+newIm = newImg.load()
 
-img.save(newfile)
+for x in range(width):
+    for y in range(height):
+        newIm[x, y] = im[x, y]
+
+newImg.save("test.png", "PNG")
