@@ -1,0 +1,14 @@
+Both certificates were evaluated using https://certlogik.com/decoder/
+
+1. Self-signed certificate
+
+This certificate is valid unti ldecember 2026. It does not use a weak key that
+is on the certlogik's blacklist. The RSA key-size is 2048 which is secure. Its
+weakness is the signature algorithm used, SHA-1, which is being phased out.
+
+2. End-user certificate
+
+This certificate is also valid unti ldecember 2026. It also does not use a weak
+key that is on the certlogik's blacklist. The RSA key-size is 1024 which is is
+not secure. Its other weakness is again the signature algorithm used, SHA-1,
+which is being phased out.
