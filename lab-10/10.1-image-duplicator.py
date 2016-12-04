@@ -9,12 +9,12 @@ img = Image.open(filename)
 im = img.load()
 
 i = 0
-while i<height:
+while i  <height:
     j = 0
-    while j<width:
-        j = j+1
-    i = i+1
+    while j < width:
+        j = j + 1
+    i = i + 1
 newfile = filename.partition('.')
-newfile = newfile[0] + "-copy.png"
+newfile = newfile[0] + "-copy.bmp"
 
 img.save(newfile)
