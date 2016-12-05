@@ -1,12 +1,10 @@
-import os, sys
 from PIL import Image
 
-filename = "grayscale.bmp"
-width = 400
-height = 300
+filename = "cat.jpg"
 
 img = Image.open(filename)
 im = img.load()
+(width, height) = img.size
 
 newImg = Image.new("RGB", (width, height))
 newIm = newImg.load()
@@ -15,4 +13,5 @@ for x in range(width):
     for y in range(height):
         newIm[x, y] = im[x, y]
 
-newImg.save("test.png", "PNG")
+gray = newImg.convert('L')
+gray.save("newImage.jpg", "JPEG")
