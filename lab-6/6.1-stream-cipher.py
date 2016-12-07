@@ -18,7 +18,7 @@ def PRGA(S):
     while True:
         i = (i + 1) % 256
         j = (j + S[i]) % 256
-        S[i], S[j] = S[j], S[i]  # swap
+        S[i], S[j] = S[j], S[i]
 
         K = S[(S[i] + S[j]) % 256]
         yield K
@@ -30,6 +30,7 @@ def RC4(key):
 def convert_key(s):
     return [ord(c) for c in s]
 
+# Implementation of RSA
 if __name__ == "__main__":
     print("Stream Cipher Encrpyter")
 

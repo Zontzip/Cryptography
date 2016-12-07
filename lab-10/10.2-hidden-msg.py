@@ -1,11 +1,13 @@
 from PIL import Image
 
+# Generate bits for the message
 def bitGenerator(messageBits):
     i = 0
     while i < len(messageBits):
       yield messageBits[i]
       i += 1
 
+# Take in an image object and message, encode message in LSB
 def hideMsg(image, message):
   (width, height) = image.size
 
@@ -17,6 +19,7 @@ def hideMsg(image, message):
       pixel = image.getpixel((x, y))
 
       binPixel = bin(pixel)
+      
       try:
         messageBit = bitsGenerator.next()
         print(messageBit)
@@ -26,8 +29,8 @@ def hideMsg(image, message):
       except StopIteration:
         return 
 
-
-image = Image.open("newImage.jpg")
-message = "Lorem ipsum dolor sit amet."
-hideMsg(image, message)
-image.save("hiddenMsgImage.jpg")
+if __name__ == "__main__":
+    image = Image.open("newImage.jpg")
+    message = "Lorem ipsum dolor sit amet."
+    hideMsg(image, message)
+    image.save("hiddenMsgImage.jpg")

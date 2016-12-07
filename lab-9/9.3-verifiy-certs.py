@@ -1,5 +1,6 @@
 from OpenSSL import crypto
 
+# Verify the user cert against the root cert
 def verify_chain_of_trust(cert_pem, trusted_cert_pem):
     certificate = crypto.load_certificate(crypto.FILETYPE_PEM, cert_pem)
     trusted_cert = crypto.load_certificate(crypto.FILETYPE_PEM, trusted_cert_pem)
